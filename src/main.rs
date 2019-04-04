@@ -1,3 +1,5 @@
+mod sh;
+
 use std::mem;
 
 const MEANING_OF_LIFE: u8 = 42; // has no fixed address
@@ -15,6 +17,8 @@ fn main() {
         GLOBAL_STATIC = 777;
         println!("This is mutable unsafe static = {}", GLOBAL_STATIC);
     }
+
+    sh::stack_and_heap();
 }
 
 fn scope_and_shadowing() {
