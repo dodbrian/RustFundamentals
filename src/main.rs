@@ -3,6 +3,23 @@ use std::mem;
 fn main() {
     fundamental_data_types();
     operators();
+    scope_and_shadowing();
+}
+
+fn scope_and_shadowing() {
+    let a = 123;
+
+    {
+        let b = 456;
+        println!("inside, b = {}", b);
+
+        println!("inside before declaration, a = {}", a);
+
+        let a = 777;
+        println!("inside, a = {}", a);
+    }
+
+    println!("outside, a = {}", a);
 }
 
 fn operators() {
