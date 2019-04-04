@@ -1,9 +1,20 @@
 use std::mem;
 
+const MEANING_OF_LIFE: u8 = 42; // has no fixed address
+
+static mut GLOBAL_STATIC: i32 = 123;
+
 fn main() {
     fundamental_data_types();
     operators();
     scope_and_shadowing();
+
+    println!("The meaning of life is {}", MEANING_OF_LIFE);
+
+    unsafe {
+        GLOBAL_STATIC = 777;
+        println!("This is mutable unsafe static = {}", GLOBAL_STATIC);
+    }
 }
 
 fn scope_and_shadowing() {
