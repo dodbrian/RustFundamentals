@@ -51,6 +51,62 @@ fn if_statement() {
             "OK"
         }
     );
+
+    while_and_loop();
+    for_loop();
+    match_statement();
+}
+
+fn match_statement() {
+    let country_code = 7777;
+
+    let country = match country_code {
+        44 => "UK",
+        49 => "Germany",
+        7 => "Russia",
+        1...999 => "unknown",
+        _ => "invalid",
+    };
+
+    println!("the country with code {} is {}", country_code, country);
+}
+
+fn for_loop() {
+    for x in 1..11 {
+        println!("x = {}", x);
+    }
+
+    for (pos, y) in (30..41).enumerate() {
+        println!("{}: {}", pos, y);
+    }
+}
+
+fn while_and_loop() {
+    let mut x = 1;
+
+    while x < 1000 {
+        x *= 2;
+
+        if x == 64 {
+            println!("Skipping {}", x);
+            continue;
+        }
+
+        println!("x = {}", x);
+    }
+
+    let mut y = 1;
+
+    loop
+    // = while true
+    {
+        y *= 2;
+        println!("y = {}", y);
+
+        if y == 1 << 20 {
+            break;
+        }
+    }
 }
 
 fn scope_and_shadowing() {
